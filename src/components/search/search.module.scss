@@ -1,0 +1,40 @@
+
+
+.searchBlock{
+	position: relative;
+}
+
+.search{
+	position: absolute;
+	left: 10px; top: 8px;
+	z-index: 1;
+	opacity: 0.5;
+
+}
+
+.input {
+	width: 400px;
+	padding: 12px 20px ;
+	padding-left: 40px;
+	font-size: 16px;
+	border: 1px solid rgb(100, 100, 100);
+	border-radius: 10px;
+	transition: all 0.3s ease 0s;
+	opacity: 0.4;
+	&:focus{
+		width: 450px;
+		opacity: 0.8;
+	}
+}
+
+.close{
+	position: absolute;
+	right: 14px;
+	top: 14px;
+	opacity: 0.5;
+	transition: all 0.3s ease 0s;
+	cursor: pointer;
+	&:hover{
+		opacity: 0.9;
+	}
+}
