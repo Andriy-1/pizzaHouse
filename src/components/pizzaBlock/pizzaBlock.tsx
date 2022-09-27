@@ -1,7 +1,5 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { selectCartItemId } from '../../redux/cart/selector';
 import { setItem } from '../../redux/cart/slice';
 import { useAppDispatch } from '../../redux/store';
 type PizzaBlockProps = {
@@ -19,8 +17,6 @@ const PizzaBlock: React.FC<PizzaBlockProps> = ({ id, title, price, imageUrl, typ
 	const [activeSize, setActiveSize] = React.useState(0);
 
 	const dispatch = useAppDispatch();
-	const cartItem = useSelector(selectCartItemId(id));
-	const addedCount = cartItem ? cartItem.count : 0;
 	const clickAddItem = () => {
 		const item = {
 			id,
@@ -46,7 +42,7 @@ const PizzaBlock: React.FC<PizzaBlockProps> = ({ id, title, price, imageUrl, typ
 						<li
 							onClick={() => setActiveType(index)}
 							key={index}
-							className={activeType === index ? 'active' : ''}>
+							className={activeType === index ? 'active' : 'pizza-item'}>
 							{typeNames[index]}
 						</li>
 					))}
@@ -56,7 +52,7 @@ const PizzaBlock: React.FC<PizzaBlockProps> = ({ id, title, price, imageUrl, typ
 						<li
 							onClick={() => setActiveSize(index)}
 							key={index + value}
-							className={activeSize === index ? 'active' : ''}>
+							className={activeSize === index ? 'active' : 'pizza-item'}>
 							{value} см.
 						</li>
 					))}
@@ -77,7 +73,6 @@ const PizzaBlock: React.FC<PizzaBlockProps> = ({ id, title, price, imageUrl, typ
 						/>
 					</svg>
 					<span>Добавити</span>
-					{addedCount > 0 && <i>{addedCount}</i>}
 				</button>
 			</div>
 		</div>
