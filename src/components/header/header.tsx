@@ -26,7 +26,7 @@ const Header: React.FC = () => {
         <Link to="/" className="header__logo">
           <img width="38" src="img/pizza-logo.svg" alt="Pizza logo" />
           <div>
-            <h1>GNX Pizza</h1>
+            <h1>Pizza House</h1>
             <p>найсмачніша піца у всесвіті</p>
           </div>
         </Link>

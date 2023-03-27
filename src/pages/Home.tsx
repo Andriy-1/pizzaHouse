@@ -37,6 +37,7 @@ const Home: React.FC = () => {
 		(i: number) => {
 			dispatch(setCatigoryId(i))
 		}, [dispatch])
+	
 	const onClickListItem = React.useCallback((i: SortType) => {
 		dispatch(setSelected(i))
 	}, [dispatch]);

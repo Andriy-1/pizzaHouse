@@ -3,7 +3,6 @@ import { calcTotalPrice } from '../../utils/calcTotalPrice';
 import { getCartFromLS } from '../../utils/getCartFromLS';
 import { CartItem, CartSliceState } from './types';
 
-
 const { items, totalPrice } = getCartFromLS();
 
 const initialState: CartSliceState = {
@@ -16,9 +15,13 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     setItem: (state, action: PayloadAction<CartItem>) => {
-		  const findItem = state.items.find((obj) => {
-			  return obj.id === action.payload.id && obj.size === action.payload.size && obj.type === action.payload.type;
-		  });
+      const findItem = state.items.find((obj) => {
+        return (
+          obj.id === action.payload.id &&
+          obj.size === action.payload.size &&
+          obj.type === action.payload.type
+        );
+      });
       if (findItem) {
         findItem.count++;
       } else {
@@ -26,8 +29,14 @@ const cartSlice = createSlice({
       }
       state.totalPrice = calcTotalPrice(state.items);
     },
-    minusItem: (state, action: PayloadAction<string>) => {
-      const findItem = state.items.find((obj) => obj.id === action.payload);
+    minusItem: (state, action: PayloadAction<CartItem>) => {
+      const findItem = state.items.find((obj) => {
+        return (
+          obj.id === action.payload.id &&
+          obj.size === action.payload.size &&
+          obj.type === action.payload.type
+        );
+      });
       if (findItem) {
         findItem.count--;
       }
@@ -46,7 +55,6 @@ const cartSlice = createSlice({
     },
   },
 });
-
 
 export const { setItem, minusItem, removeItem, cleanItem } = cartSlice.actions;
 export default cartSlice.reducer;
