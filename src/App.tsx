@@ -18,9 +18,9 @@ function App() {
 		<Routes>
 			<Route path='/' element={<MainLayouts/>}>
 				<Route path='*' element={<NotFound />} />
-				<Route path='pizza/:id' element={<FullPizza />} />
-				<Route path='' element={<Home />} />
-				<Route path='cart' element={<Cart />} />
+				<Route path='pizzaHouse/pizza/:id' element={<FullPizza />} />
+				<Route path='pizzaHouse' element={<Home />} />
+				<Route path='pizzaHouse/cart' element={<Cart />} />
 				Redirect
 			</Route>
 		</Routes>

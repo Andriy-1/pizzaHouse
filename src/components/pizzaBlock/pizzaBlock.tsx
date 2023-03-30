@@ -31,7 +31,7 @@ const PizzaBlock: React.FC<PizzaBlockProps> = ({ id, title, price, imageUrl, typ
 	};
 	return (
 		<div className="pizza-block">
-			<Link to={`/pizza/${id}`}>
+			<Link to={`pizzaHouse/pizza/${id}`}>
 				<img className="pizza-block__image" src={imageUrl} alt="Pizza" />
 			</Link>
 
