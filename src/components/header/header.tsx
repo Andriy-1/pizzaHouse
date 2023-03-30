@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import Search from '../search';
 import { useSelector } from 'react-redux';
 import { selectCart } from '../../redux/cart/selector';
-
+import logo from '../../img/pizza-logo.svg';
 const Header: React.FC = () => {
   const { items, totalPrice } = useSelector(selectCart);
   const location = useLocation();
@@ -24,7 +24,7 @@ const Header: React.FC = () => {
     <div className="header">
       <div className="container">
         <Link to="/" className="header__logo">
-          <img width="38" src="img/pizza-logo.svg" alt="Pizza logo" />
+          <img width="38" src={logo} alt="Pizza logo" />
           <div>
             <h1>Pizza House</h1>
             <p>найсмачніша піца у всесвіті</p>
