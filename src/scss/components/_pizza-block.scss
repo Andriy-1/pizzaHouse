@@ -1,5 +1,9 @@
 @import "../variables";
-
+.fullPizza-container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 .pizza-block {
 	width: 280px;
 	text-align: center;
