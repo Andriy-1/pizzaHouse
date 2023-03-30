@@ -83,7 +83,7 @@ const Cart: React.FC = () => {
                   strokeLinecap="round"
                   strokeLinejoin="round"></path>
               </svg>
-              <Link to="/">
+              <Link to={"/pizzaHouse"}>
                 <span onClick={onClickCartClear}>Очистити корзину</span>
               </Link>
             </div>
@@ -105,7 +105,7 @@ const Cart: React.FC = () => {
               </span>
             </div>
             <div className="cart__bottom-buttons">
-              <Link to={'/'} className="button button--outline button--add go-back-btn">
+              <Link to={'/pizzaHouse'} className="button button--outline button--add go-back-btn">
                 <svg
                   width="8"
                   height="14"

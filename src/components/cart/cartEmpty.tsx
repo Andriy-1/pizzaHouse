@@ -14,7 +14,7 @@ const CartEnpty: React.FC = () => {
 					Щоб замовити піцу, перейди на головну сторінку.
 				</p>
 				<img src={cart} alt="Empty cart" />
-				<Link to="/" className="button button--black">
+				<Link to="/pizzaHouse" className="button button--black">
 					<span>Вернуться назад</span>
 				</Link>
 			</div>
